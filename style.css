@@ -19,6 +19,7 @@ body{
     overflow: hidden;
     display: flex;
     background-color: #CBBACF;
+    touch-action: manipulation;
     
 }
 
@@ -161,6 +162,9 @@ body{
 
 .menuButton
 {
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
     font-weight: 400;
     font-family: "SilkScreen";
     font-size: x-large;
@@ -180,6 +184,9 @@ body{
 
 .aboutbutton
 {
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
     font-weight: 400;
     font-family: "SilkScreen";
     font-size: x-large;
@@ -270,6 +277,9 @@ body{
 
 .key
 {
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
     width: 100%;
     height: 100%;
     background-color: #C4CFA1;
@@ -398,6 +408,9 @@ body{
 
 .modalButton
 {
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
     width: 100px;
     height: 50px;
     border: none;
@@ -516,6 +529,9 @@ body{
 
 .close
 {
+    appearance: none;
+    -webkit-appearance: none;
+    touch-action: manipulation;
     position: absolute;
     background-color: #C4CFA1;
     border: none;
