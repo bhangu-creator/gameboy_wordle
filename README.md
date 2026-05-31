@@ -15,3 +15,6 @@ A Game Boy-inspired Wordle clone built with Vanilla JavaScript, HTML, and CSS.
 
 Coming soon
 
+## Play The Game
+https://bhangu-creator.github.io/gameboy_wordle/ 
+
