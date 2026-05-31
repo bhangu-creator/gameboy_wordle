@@ -1,0 +1,563 @@
+@font-face {
+    font-family: "SilkScreen";
+    src: url("/fonts/Silkscreen-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "SilkScreen";
+    src: url("/fonts/Silkscreen-Bold.ttf");
+    font-weight: 700;
+}
+
+
+body{
+
+    height: 100vh;
+    justify-content: center ;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    background-color: #CBBACF;
+    
+}
+
+.gameboy
+{
+
+    width: clamp(370px,30vw,600px);
+    max-height: 95vh;
+    max-width: 95vw;
+    height: auto;
+    /* height: 860px; */
+    background-color: #B7B7B7;
+    border: 2px solid #939393; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px,1.5vw,24px);
+    padding: clamp(12px,1.5vw,24px);
+
+}
+/* .gameboy_design
+{
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    right:0%;
+    left: auto;
+    top:0%;
+    background-color: white;
+    border: none;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-color: #939393;
+    background-color: #CBBACF;
+
+} */
+
+.gameboy_tag
+{
+    width: 320px;
+    height: 40px;
+    border: 1px solid #939393;
+    border-radius: 30px;
+
+}
+
+.gameboy_screen
+{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    background-color: #1F1f1f;
+
+
+}
+
+
+.gameboy_down
+{
+    width: 30px;
+    height: 30px;
+
+}
+
+
+.gameboy_welcomeScreen p {
+  margin: 0;
+}   
+
+
+.gameboy_welcomeScreen
+{
+    position: absolute;
+    top:70px;
+    left: 50px;
+    width:200px;
+    height: 50px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 5px;
+    border: 5px solid transparent;
+    box-shadow: inset 0 0 0 1px #939393;
+    background-color: #C4CFA1;
+    align-items: center;
+    font-weight: 400;
+    font-family: "SilkScreen";
+    font-size: xx-large;
+    letter-spacing: 5px;
+    text-shadow: -4px 0px 2px rgba(0, 0, 0, 0.5);   
+    visibility: hidden;
+    transform-origin: center;
+    transform: scale(0);
+    transition: opacity 0.5s ease, transform 1s ease
+}
+
+.gameboy_welcomeScreen .gameboy_tagline
+{
+    font-size: xx-small;
+    letter-spacing: normal;
+    text-shadow: none;
+
+}
+
+.gameboy_menu
+{
+    position: absolute;
+    top:200px;
+    left: 50px;
+    width:200px;
+    height: 10px;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    border: 5px solid transparent;
+    box-shadow: inset 0 0 0 1px #939393;
+    background-color: #C4CFA1;
+    align-items: center;
+    visibility: hidden;
+    transform-origin: center;
+    transform: scale(0);
+    transition: opacity 0.5s ease, transform 1s ease
+}
+
+
+.gameboy_menu p
+{
+    transition: transform 0.1s ease;
+    margin: 0;
+}
+
+.gameboy_menu p.active
+{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.menuButton
+{
+    font-weight: 400;
+    font-family: "SilkScreen";
+    font-size: x-large;
+    border: none;
+    background-color: #C4CFA1;
+    width: 70px;
+    height: 40px;
+}
+
+.menuButton:hover
+{
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-shadow: 0.01px 0 currentColor, -0.01px 0 currentColor;
+
+}
+
+.aboutbutton
+{
+    font-weight: 400;
+    font-family: "SilkScreen";
+    font-size: x-large;
+    border: none;
+    background-color: #C4CFA1;
+    width: 70px;
+    height: 40px;
+}
+
+.aboutbutton:hover
+{
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-shadow: 0.01px 0 currentColor, -0.01px 0 currentColor;
+
+}
+
+
+.wordleMatrix
+{
+    visibility: hidden;
+    background-color: #C4CFA1;
+    display: grid;
+    position: absolute;
+    width: 298px;
+    height: 468px;
+    grid-template-rows: repeat(6,50px);
+    grid-template-columns: repeat(5,50px);
+    gap:5px;
+    z-index: 2;
+    transition: opacity 1s ease ,transform 1s ease;
+    transform: scale(0);
+    padding: 10px;
+    padding-left: 40px;
+    padding-top: 20px;
+    border:2px solid #939393;
+}
+
+.keyboardGrid
+{
+    background-color: #C4CFA1;
+    display: grid;
+    position: absolute;
+    width: 310px;
+    left:10px;
+    height: 130px;
+    z-index: 2;
+    top : 355px;
+    visibility: hidden;
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 1s ease ;
+    grid-template-rows: repeat(4,30px);
+    grid-template-columns: repeat(7,35px);
+    padding: 5px;
+    gap:1px;
+    place-content: center;
+    
+
+}
+
+.enter
+{
+    position: absolute;
+    left: 9px;
+    top:102px;
+    width: 60px;
+    height: 30px;
+    background-color: #C4CFA1;
+    border: 1 px solid white;
+    font-family: "SilkScreen";
+    font-weight: 400;
+
+    
+
+}
+
+.backspace
+{
+    width: 60px;
+    background-color: #C4CFA1;
+    border: 1 px solid white;
+    font-family: "SilkScreen";
+    font-weight: 400;
+
+
+}
+
+.key
+{
+    width: 100%;
+    height: 100%;
+    background-color: #C4CFA1;
+    border: 1 px solid white;
+    font-family: "SilkScreen";
+    font-weight: 400;
+}
+
+.cell
+{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #555;  
+    box-sizing: border-box;  
+    opacity: 0;
+    text-align: center;
+    padding: 10px;
+    font-family: "SilkScreen";
+    font-weight: 400;
+    font-size: x-large;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.0);
+
+}
+
+.mismatch
+{
+    background-color: #8B956D;
+    color: #C4CFA1;
+}
+.partialmatch
+{
+    background-color: #4D533C;
+    color: #C4CFA1;
+    
+
+}
+
+.match{
+    background-color: #1F1F1F;
+    color: #C4CFA1;
+
+}
+
+@keyframes lcdPop
+{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70%{
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cellAnimation{
+        animation: lcdPop 0.6s ease-out forwards;
+
+
+}
+
+.toast_alert
+{
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    z-index: 3;
+    width: 250px;
+    height: 40px;
+    background-color: #CBBACF;
+    align-content: center;
+    text-align: center;
+    transform-origin: center;
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.alert
+{
+    font-family: "SilkScreen";
+    font-weight: 400;
+    z-index: 3;
+  
+}
+
+.modal
+{
+    position: absolute;
+    top: 120px;
+    left: 38px;
+    z-index: 4;
+    width: 220px;
+    height: 100px;
+    background-color: #CBBACF;
+    align-content: center;
+    text-align: center;
+    transform-origin: center;
+    opacity: 0.9;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding: 30px;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+
+
+    
+}
+
+.modalText
+{
+    font-family: "SilkScreen";
+    font-weight: 400;
+    font-size: large;
+    z-index: 4;
+}
+
+.modalButton
+{
+    width: 100px;
+    height: 50px;
+    border: none;
+    font-family: "SilkScreen";
+    font-weight: 400;
+    background-color: #CBBACF;
+    font-size: large;
+    z-index: 4;
+    cursor: pointer;
+    
+}
+
+.modalButton:hover
+{
+    font-family: "SilkScreen";
+    font-weight: 700;
+
+}
+
+.about
+{
+    position: absolute;
+    left:10px;
+    top:10px;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    width:310px;
+    height: 450px;
+    background-color:#C4CFA1;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    font-family: "SilkScreen";
+    font-weight: 400;
+    transform-origin: center;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s ease-in;
+
+
+}
+.correctImage
+{
+    width:250px;
+    height:40px;
+}
+
+.correctText
+{
+    font-size: small;
+
+}
+
+.partialImage
+{
+    width:250px;
+    height:40px;
+
+}
+.partialText
+{
+    font-size: small;
+
+}
+
+.wrongImage
+{
+    width:250px;
+    height:40px;
+
+}
+.wrongText
+{
+    font-size: small;
+
+}
+
+.about span
+{
+    padding:2px;
+}
+.about h1 
+{
+
+    font-size: x-large;
+
+}
+.about p1 
+{
+
+    font-size: small;
+
+}
+
+.about h3
+{
+
+    margin:0px;
+    padding:0px;
+
+}
+
+
+.ulist
+{
+
+    font-size: small;
+    padding-left: 10px;
+    margin-left: 0px;
+}
+
+.ulist li
+{
+    margin-bottom: 5px;
+}
+
+.close
+{
+    position: absolute;
+    background-color: #C4CFA1;
+    border: none;
+    top:10px;
+    left:300px;
+    font-size:large;
+    cursor: pointer;
+
+}
+
+
+.visibleCell
+{
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+
+.visible
+{
+    visibility: visible;
+    transform: scale(1);
+}
+
+.visibleAbout
+{
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+
+}
+
+.hidden
+{
+    transform: scale(0);
+    visibility: hidden;
+
+} 
+
+
+
+
+
+

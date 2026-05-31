@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gameboy-wordle</title>
+    </head>
+    <body>
+        <div class="gameboy">
+            <div class="gameboy_design"></div>
+            <div class="gameboy_tag"></div>
+            <div class="gameboy_screen">
+                <div class="gameboy_welcomeScreen">
+                    <p>WORDLE</p>
+                    <p class="gameboy_tagline">One word. Six tries.</p>
+                </div>
+                <div class="gameboy_menu">
+                    <button class="menuButton" id="playbutton">Play</button>
+                    <button class="aboutbutton" id="aboutbutton">About</button>
+                </div>
+                <div class="about" id="about">
+                    <h1>How To Play</h1>
+                    <p1>Guess the Wordle in 6 tries.</p1>
+                    <section class="section">
+                        <ul class="ulist">
+                            <li>Each guess must be a valid 5-letter word.</li>
+                            <li>The color of the tiles will change to show how close your guess was to the word.</li>
+                        </ul>
+                    </section>
+                    <h3>Examples</h3>
+                    <img alt="correct" src="/images/correct_example.png" class="correctImage">
+                    <span class="correctText"><strong>W</strong> is in the word and in the correct spot</span>
+                    <img alt="partial" src="/images/partial_example.png" class="partialImage">
+                    <span class="partialText"><strong>I</strong> is in the word but in the wrong spot</span>
+                    <img alt="wrong" src="/images/wrong_example.png" class="wrongImage">
+                    <span class="wrongText"><strong>U</strong> is not in the word in any spot</span>
+
+                    
+                    <button class="close" id="close">X</button>
+                </div>
+                <div class="wordleMatrix" id="wordleMatrixId"></div>
+                <div id="toast_alert" class="toast_alert">
+                    <span id="alert" class="alert"></span>
+                </div>
+                <div class="keyboardGrid" id="keyboardGrid">
+                    
+                </div>
+                <div id="modal" class="modal">
+                    <span class="modalText" id="modalText"></span>
+                    <button class="modalButton" id="modalButton"></button>
+                </div>
+
+            </div>   
+            <img src="/images/down.png" alt="arrow" class="gameboy_down">
+
+        </div>
+
+        <script  type="module" src="script.js"></script>
+    </body>
+
+</html>
