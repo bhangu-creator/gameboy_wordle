@@ -1,12 +1,12 @@
 @font-face {
     font-family: "SilkScreen";
-    src: url("/fonts/Silkscreen-Regular.ttf");
+    src: url("fonts/Silkscreen-Regular.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "SilkScreen";
-    src: url("/fonts/Silkscreen-Bold.ttf");
+    src: url("fonts/Silkscreen-Bold.ttf");
     font-weight: 700;
 }
 
